@@ -19,6 +19,10 @@ if (${TEST_ONLY})
     add_executable(${PROJECT_NAME}
         test/main.cpp
 
+        # here add your src modules used in tests
+        $<TARGET_OBJECTS:${PROJECT_NAME}-example-module>
+
+        # here add your test modules
         $<TARGET_OBJECTS:${PROJECT_NAME}-testcases>
     )
 
@@ -41,6 +45,7 @@ else ()
     add_executable(${PROJECT_NAME}
         src/main.cpp
 
+        # here add your src modules
         $<TARGET_OBJECTS:${PROJECT_NAME}-example-module>
     )
 
